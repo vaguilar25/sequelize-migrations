@@ -29,26 +29,33 @@ node_modules/.bin/sequelize model:generate --name Burgers --attributes burger_na
 ```
 node_modules/.bin/sequelize db:migrate
 ```
-node_modules/.bin/sequelize db:migrate:undo this will execute the code of the migration in down section
+
+To undo the migration this will execute the code of the migration in down section
+
+```
+node_modules/.bin/sequelize db:migrate:undo 
+```
+
 
 4. If we wan to create seed file with default records on the db 
 ```
 node_modules/.bin/sequelize seed:generate --name new-burger
 ```
 this will generate a file in seeders/
+```
 In my example 
 20190103213049-new-burger.js
-
+```
 5. Run the seed and insert fields on the DB
 ```
     node_modules/.bin/sequelize db:seed:all
 ```
-5.  Revert the seed if you want to remove the records recently inserted with the seed file
+6.  Revert the seed if you want to remove the records recently inserted with the seed file
 
 ```
 node_modules/.bin/sequelize db:seed:undo
 ```
-6. If we want to update our current devoured field to default value false we need to create a migration. This will generate a new migration file with that name. 
+7. If we want to update our current devoured field to default value false we need to create a migration. This will generate a new migration file with that name. 
 
 ```
 sequelize migration:generate --name updateDevoured
@@ -62,12 +69,12 @@ Inside this file you will see
 
 __queryInterface.changeColumn__ this is the command for update the database.
 
-7.  Run the migration 
+8.  Run the migration 
 ```
 node_modules/.bin/sequelize db:migrate
 ```
 
-8. If you want to add more columns you will need to generate another migration with a
+9. If you want to add more columns you will need to generate another migration with a
 
 ___queryInterface.addColumn___
 
@@ -78,13 +85,13 @@ equelize migration:generate --name addColumns
 this will generate a new migrations file  for reference see 
 /migrations/20190103220859-addColumns.js
 
-9. If you want to see the status of your migrations you can run 
+10. If you want to see the status of your migrations you can run 
 
 ```
 node_modules/.bin/sequelize db:migrate:status
 ```
 
-10.  Sources
+11.  Sources
 
 https://sequelize.readthedocs.io/en/latest/docs/migrations/
 

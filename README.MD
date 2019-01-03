@@ -37,7 +37,7 @@ node_modules/.bin/sequelize db:migrate:undo
 ```
 
 
-4. If we wan to create seed file with default records on the db 
+4. If we want to create seed file with default records on the db 
 ```
 node_modules/.bin/sequelize seed:generate --name new-burger
 ```
